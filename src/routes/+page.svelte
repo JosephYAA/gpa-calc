@@ -42,13 +42,10 @@
 <!-- eslint-disable-next-line-->
 <form>
 	{#each courses as course}
-<<<<<<< HEAD
 		<Label for="course-name">Course Name</Label>
 		<Input type="text" id="course-name" bind:value={course.name} />
-=======
 		<Label for="course-{course.id}-name">Course Name</Label>
 		<Input type="text" id="course-{course.id}-name" bind:value={course.name} />
 		<Label for="course-{course.id}-credits">Course Credits</Label>
->>>>>>> 3d02726 (added course properties)
 	{/each}
 </form>
