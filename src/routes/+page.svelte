@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { toggleMode, ModeWatcher } from 'mode-watcher';
+	import Sun from 'lucide-svelte/icons/sun';
+	import Moon from 'lucide-svelte/icons/moon';
 	import { Slider } from '$lib/components/ui/slider';
 	import { Label } from '$lib/components/ui/label';
 	import { Input } from '$lib/components/ui/input/index.js';
@@ -59,6 +62,16 @@
 	}
 </script>
 
+<Button on:click={toggleMode} variant="outline" size="icon">
+	<Sun
+		class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+	/>
+	<Moon
+		class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+	/>
+	<span class="sr-only">Toggle theme</span>
+</Button>
+<ModeWatcher />
 <div class="mb-10 mt-20 flex flex-col items-center justify-center space-y-2">
 	<Label for="courses" class="">Number of Courses: {noCourses}</Label>
 	<Slider
@@ -73,7 +86,7 @@
 {#if visible}
 	<Alert.Root class="m-auto mb-5 max-w-[20%]">
 		<Alert.Title>Congratulations!</Alert.Title>
-		<Alert.Description>Your GPA is: {GPA}</Alert.Description>
+		<Alert.Description>Your GPA is: {GPA.toFixed(2)}</Alert.Description>
 	</Alert.Root>
 {/if}
 <form>
