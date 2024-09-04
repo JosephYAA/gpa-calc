@@ -1,6 +1,6 @@
 # GPA Calculator
 
-A simple GPA calculator exercise done in Svelte
+A simple GPA calculator exercise done in Svelte.
 
 ![Light Mode Demo](./demo/light.jpeg)
 ![Dark Mode Demo](./demo/dark.jpeg)
